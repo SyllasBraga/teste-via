@@ -15,7 +15,6 @@ public class ProdutoModel {
 
     private String nomeProduto;
 
-    @Column(name = "descricao")
     private String descricao;
 
     @Enumerated(EnumType.STRING)
