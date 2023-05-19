@@ -35,8 +35,8 @@ public class ProdutoService {
         return listaProdutos;
     }
 
-    private ProdutoModel converterParaProdutoModel(ProdutoDto listaProdutosDto){
-        return modelMapper.map(listaProdutosDto, ProdutoModel.class);
+    private ProdutoModel converterParaProdutoModel(ProdutoDto produtosDto){
+        return modelMapper.map(produtosDto, ProdutoModel.class);
     }
 }
 

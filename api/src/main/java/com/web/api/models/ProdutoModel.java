@@ -6,6 +6,7 @@ import lombok.Data;
 
 @Entity
 @Data
+@Table(name = "produtos")
 public class ProdutoModel {
 
     @Id
@@ -13,6 +14,8 @@ public class ProdutoModel {
     private Long idProduto;
 
     private String nomeProduto;
+
+    @Column(name = "descricao")
     private String descricao;
 
     @Enumerated(EnumType.STRING)
