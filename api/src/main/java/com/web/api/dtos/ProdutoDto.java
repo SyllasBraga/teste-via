@@ -3,10 +3,14 @@ package com.web.api.dtos;
 import com.web.api.enuns.StatusVendaEnum;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Size;
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 
 @Data
+@NoArgsConstructor
+@AllArgsConstructor
 public class ProdutoDto {
 
     @NotBlank(message = "O nome do produto não pode estar vazio.")

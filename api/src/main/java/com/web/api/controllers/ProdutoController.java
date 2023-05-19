@@ -24,8 +24,8 @@ public class ProdutoController {
     }
 
     @PostMapping
-    public ResponseEntity<?> createByList(@RequestBody @Valid List<ProdutoDto> listaProdutoDto){
-        produtoService.createByListProdutos(listaProdutoDto);
-        return ResponseEntity.status(201).build();
+    public ResponseEntity<List<ProdutoDto>> createByList(@RequestBody @Valid List<ProdutoDto> listaProdutoDto){
+        List<ProdutoDto> listaProdutoSalva = produtoService.createByListProdutos(listaProdutoDto);
+        return ResponseEntity.status(201).body(listaProdutoSalva);
     }
 }

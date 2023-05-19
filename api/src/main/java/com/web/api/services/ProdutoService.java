@@ -20,11 +20,13 @@ public class ProdutoService {
         this.modelMapper = modelMapper;
     }
 
-    public void createByListProdutos(List<ProdutoDto> listaProdutosDto){
+    public List<ProdutoDto> createByListProdutos(List<ProdutoDto> listaProdutosDto){
 
         List<ProdutoModel> listaProdutosParaSalvar = converterParaListaProdutosModel(listaProdutosDto);
 
-        produtoRepository.saveAll(listaProdutosParaSalvar);
+        List<ProdutoModel> listaAtualizada = produtoRepository.saveAll(listaProdutosParaSalvar);
+
+        return converterParaListaProdutosDto(listaAtualizada);
     }
 
     private List<ProdutoModel> converterParaListaProdutosModel (List<ProdutoDto> listaDto){
@@ -37,6 +39,18 @@ public class ProdutoService {
 
     private ProdutoModel converterParaProdutoModel(ProdutoDto produtosDto){
         return modelMapper.map(produtosDto, ProdutoModel.class);
+    }
+
+    private List<ProdutoDto> converterParaListaProdutosDto (List<ProdutoModel> listaModel){
+        List<ProdutoDto> listaProdutos = new ArrayList<>();
+
+        listaModel.forEach(produtoModel -> listaProdutos.add(converterParaProdutoDto(produtoModel)));
+
+        return listaProdutos;
+    }
+
+    private ProdutoDto converterParaProdutoDto(ProdutoModel produtoModel){
+        return modelMapper.map(produtoModel, ProdutoDto.class);
     }
 }
 
