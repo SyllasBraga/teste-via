@@ -1,0 +1,37 @@
+[
+  {
+    "nomeProduto": "Arroz",
+    "descricao": "Pacote de 1kg",
+    "statusVenda": "NAO_VENDIDO"
+  },
+  {
+    "nomeProduto": "Feijão",
+    "descricao": "Pacote de 1kg",
+    "statusVenda": "VENDIDO"
+  },
+  {
+    "nomeProduto": "Macarrão",
+    "descricao": "Pacote de 500g",
+    "statusVenda": "NAO_VENDIDO"
+  },
+  {
+    "nomeProduto": "Óleo de soja",
+    "descricao": "Garrafa de 900ml",
+    "statusVenda": "VENDIDO"
+  },
+  {
+    "nomeProduto": "Açúcar",
+    "descricao": "Pacote de 1kg",
+    "statusVenda": "NAO_VENDIDO"
+  },
+  {
+    "nomeProduto": "Café",
+    "descricao": "Pacote de 250g",
+    "statusVenda": "VENDIDO"
+  },
+  {
+    "nomeProduto": "Sal",
+    "descricao": "Pacote de 500g",
+    "statusVenda": "NAO_VENDIDO"
+  }
+]
