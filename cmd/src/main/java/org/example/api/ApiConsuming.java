@@ -20,17 +20,21 @@ public class ApiConsuming {
         this.httpClient = httpClient;
     }
 
-    private HttpRequest criarRequest() throws FileNotFoundException {
+    private HttpRequest criarRequest() {
 
-        return HttpRequest.newBuilder()
-                .POST(HttpRequest.BodyPublishers.ofFile(Path.of(fileJson)))
-                .timeout(Duration.ofSeconds(10))
-                .uri(URI.create(urlPost))
-                .setHeader("Content-Type", "application/json")
-                .build();
+        try {
+            return HttpRequest.newBuilder()
+                    .POST(HttpRequest.BodyPublishers.ofFile(Path.of(fileJson)))
+                    .timeout(Duration.ofSeconds(10))
+                    .uri(URI.create(urlPost))
+                    .setHeader("Content-Type", "application/json")
+                    .build();
+        } catch (FileNotFoundException e) {
+            throw new RuntimeException(e);
+        }
     }
 
-    public void enviarRequest() throws FileNotFoundException {
+    public void enviarRequest(){
 
         HttpRequest request = criarRequest();
 
